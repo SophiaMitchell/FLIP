@@ -1,6 +1,6 @@
 # FLIP
 
-<b>Fuzzy Logic Inferencing in PONG is a project I began almost four years ago that blossomed into the basis of my Masters thesis. What began as a study of fuzzy logic through applying it to the game of PONG quickly turned into a study of human reasoning through cascading fuzzy logic as well as an examination of human and computer collaboration with a two-player game. Overall this project was incredibly fun and I learned a ton. I keep updating parts of it to optimize the singles and doubles games but right now they are pretty hard to beat. 
+<b>Fuzzy Logic Inferencing in PONG</b> (FLIP) is a project I began almost four years ago that blossomed into the basis of my Masters thesis. What began as a study of fuzzy logic through applying it to the game of PONG quickly turned into a study of human reasoning through cascading fuzzy logic as well as an examination of human and computer collaboration with a two-player game. Overall this project was incredibly fun and I learned a ton. I keep updating parts of it to optimize the singles and doubles games but right now they are pretty hard to beat. 
 
 My current task for this project is to make a downloadable .exe to distribute here and on my research group's (MOST-Aero) website so people can have fun with an intelligent system! Check back soon!
 
