@@ -1,0 +1,41 @@
+[System]
+Name='gametype'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Score'
+Range=[-21 21]
+NumMFs=3
+MF1='ahead':'gaussmf',[8.823 -21]
+MF2='tied':'gaussmf',[9.012 0]
+MF3='behind':'gaussmf',[8.823 21]
+
+[Input2]
+Name='Speed'
+Range=[0 3]
+NumMFs=1
+MF1='fast':'gauss2mf',[0.813831072667627 2.58333333333333 0.311 3.23]
+
+[Output1]
+Name='Game'
+Range=[0 1]
+NumMFs=2
+MF1='defensive':'gaussmf',[0.162899022542014 0]
+MF2='offensive':'gauss2mf',[0.0909756405747714 0.302910052910053 0.416 1.31]
+
+[Rules]
+1 0, 1 (1) : 1
+2 0, 2 (1) : 1
+3 0, 2 (1) : 1
+1 1, 1 (1) : 1
+2 1, 2 (1) : 1
+3 1, 2 (1) : 1
