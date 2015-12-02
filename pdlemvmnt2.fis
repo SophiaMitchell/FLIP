@@ -1,0 +1,39 @@
+[System]
+Name='pdlemvmnt2'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Distance'
+Range=[-100 100]
+NumMFs=5
+MF1='FBelow':'gbellmf',[79.6825396825397 24.6 -90]
+MF2='CBelow':'gaussmf',[3.17 -6.57989417989418]
+MF3='On_Target':'gaussmf',[2 0]
+MF4='CAbove':'gaussmf',[3.17 6.58]
+MF5='FAbove':'gbellmf',[79.68 24.6 90]
+
+[Output1]
+Name='Movement'
+Range=[-1 1]
+NumMFs=5
+MF1='Dfast':'trapmf',[-1.45 -1.05 -0.2 -0.1]
+MF2='Dslow':'trimf',[-0.2 -0.1 0]
+MF3='None':'trimf',[-0.1 0 0.1]
+MF4='Uslow':'trimf',[0 0.1 0.2]
+MF5='Ufast':'trapmf',[0.1 0.2 1.14 1.38]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+4, 4 (1) : 1
+5, 5 (1) : 1
+3, 3 (1) : 1
