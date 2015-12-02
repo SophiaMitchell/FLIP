@@ -360,10 +360,10 @@ set(timething,'ExecutionMode','fixedRate','TimerFcn', @(x,y)refreshPlot, 'Period
     if goal %a goal was made
       pause(START_DELAY);
       resetGame;
-      if winner > 0 %somebody won
+      if winner > 0 %somebody won!
         pauseGame(['      PLAYER ' num2str(winner) ' IS THE WINNER!!!' 10])
         newGame;
-      else %nobody won
+      else %nobody won yet
       end
     end
   end
@@ -431,9 +431,9 @@ set(timething,'ExecutionMode','fixedRate','TimerFcn', @(x,y)refreshPlot, 'Period
         think = true;
     elseif (ballVector(1) < 0) && (ballX > 73.5 && ballX < 74.85) && (ballSpeed > 1.6)
         think = true;
-    %elseif(ballVector(1) < 0) && (ballX > 58 && ballX < 62)
-    %    think = true;
-    elseif(ballVector(1) < 0) && (ballX > 48.85 && ballX < 49.1)
+    elseif(ballVector(1) < 0) && (ballX > 58 && ballX < 62)
+        think = true;
+    elseif(ballVector(1) < 0) && (ballX > 49.85 && ballX < 50.1)
         think = true;
     %elseif(ballVector(1) < 0) && (ballX > 38 && ballX < 42)
     %    think = true;
@@ -468,7 +468,7 @@ set(timething,'ExecutionMode','fixedRate','TimerFcn', @(x,y)refreshPlot, 'Period
 %listener registered in createFigure
 %listens for input
 %sets appropriate variables and calls functions
-  function keyDown(src,event)
+  function keyDown(src,event) %#ok<INUSL>
     switch event.Key
       
       %case 'a'
@@ -496,7 +496,7 @@ set(timething,'ExecutionMode','fixedRate','TimerFcn', @(x,y)refreshPlot, 'Period
 %------------keyUp------------
 %listener registered in createFigure
 %used to stop paddles on keyup
-  function keyUp(src,event)
+  function keyUp(src,event) %#ok<INUSL>
     switch event.Key
       
       %case 'a'
@@ -655,6 +655,10 @@ close(fig);
     
     difference = move_here - ((current_pos(2)+current_pos(3))/2);
    
+    if(isempty(difference))
+        difference = 0;
+    end
+    
     paddle1V = evalfis(difference, move);
         
     end
